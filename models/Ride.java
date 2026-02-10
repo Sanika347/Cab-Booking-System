@@ -1,20 +1,34 @@
 package com.company.models;
 
-import com.company.enums.Gender;
-
-import java.util.ArrayList;
-import java.util.List;
-
-public class Rider extends User {
+public class Ride {
+    private Driver driver;
+    private Rider rider;
     private Location fromLocation;
     private Location toLocation;
-    private List<Ride> rideList = new ArrayList<Ride>();
 
-    public Rider(String name, int id, Gender gender, Location fromLocation, Location toLocation){
-        super(name, id, gender);
+    public Ride(Driver driver, Rider rider, Location fromLocation, Location toLocation){
+        this.driver = driver;
+        this.rider = rider;
         this.fromLocation = fromLocation;
         this.toLocation = toLocation;
     }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
+
+    public Rider getRider() {
+        return rider;
+    }
+
+    public void setRider(Rider rider) {
+        this.rider = rider;
+    }
+
     public Location getFromLocation() {
         return fromLocation;
     }
@@ -29,13 +43,5 @@ public class Rider extends User {
 
     public void setToLocation(Location toLocation) {
         this.toLocation = toLocation;
-    }
-
-    public List<Ride> getRideList() {
-        return rideList;
-    }
-
-    public void setRideList(List<Ride> rideList) {
-        this.rideList = rideList;
     }
 }
